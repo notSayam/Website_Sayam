@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayam Dhingra - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #2e2e2e; /* Dark background color */
+            color: #e0e0e0; /* Light text color */
+            scroll-behavior: smooth; /* Smooth scroll */
+            line-height: 1.6;
+            background-image: url('images/grainy_texture.png'); /* Optional: Add a grainy texture image */
+            background-size: cover;
+        }
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+        }
+        .background-layer.layer1 {
+            background: url('images/layer1.png') no-repeat center center/cover;
+            filter: blur(8px);
+        }
+        .background-layer.layer2 {
+            background: url('images/layer2.png') no-repeat center center/cover;
+            filter: blur(4px);
+        }
+        .background-layer.layer3 {
+            background: url('images/layer3.png') no-repeat center center/cover;
+        }
+		.background-layer.layer4 {
+            background: url('images/layer4.png') no-repeat center center/cover;
+            filter: blur(2px);
+        }
+		.background-layer.layer5 {
+            background: url('images/layer5.png') no-repeat center center/cover;
+        }
+        .floating-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .floating-images img {
+            position: absolute;
+            width: 53px;
+            height: 68px;
+            pointer-events: auto;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .header {
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0;
+            background-color: #181425; /* Inside box color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+            border: 2px solid #a0a0a0; /* Light grey border */
+            position: relative;
+        }
+        .title-bar {
+            background-color: #1a191f; /* Title bar color */
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #a0a0a0; /* Light grey border */
+        }
+        .title-bar .title {
+            font-size: 1rem;
+            color: #ffffff; /* Inside box color */
+        }
+        .title-bar .controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .title-bar .controls .control {
+            width: 16px;
+            height: 16px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .title-bar .controls .control.close {
+            background-image: url('images/close-icon.png'); /* Close icon */
+        }
+        .title-bar .controls .control.minimize {
+            background-image: url('images/minimize-icon.png'); /* Minimize icon */
+        }
+        .title-bar .controls .control.maximize {
+            background-image: url('images/maximize-icon.png'); /* Maximize icon */
+        }
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section {
+            padding: 1rem;
+            display: block; /* Ensure sections are displayed by default */
+        }
+        h2 {
+            color: #82aaff; /* Muted blue section headers */
+            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #413d4b; /* Slightly lighter dark background */
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #555555;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        li i {
+            margin-right: 1rem;
+            color: #8be9fd; /* Cyan icons */
+        }
+        .project-title, .work-title, .skills-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #a1cfff; /* Muted blue-green project titles */
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .project-title:hover, .work-title:hover, .skills-title:hover {
+            color: #82aaff;
+        }
+        .project-description, .work-description {
+            display: none;
+            padding-left: 1.5rem;
+            overflow: hidden;
+        }
+        .skills-list {
+            display: block; /* Ensure skills list is displayed by default */
+            overflow: hidden;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+        }
+        .links a {
+            color: #1e1e1e;
+            background-color: #a1cfff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .links a:hover {
+            background-color: #1e1e1e;
+            color: #a1cfff;
+            border: 1px solid #a1cfff;
+        }
+
+        /* Sweeping animation */
+        @keyframes sweepDown {
+            from {
+                max-height: 0;
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                max-height: 1000px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes sweepUp {
+            from {
+                max-height: 1000px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                max-height: 0;
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+        .sweep-animation {
+            animation: sweepDown 0.5s ease-out;
+        }
+        .sweep-up-animation {
+            animation: sweepUp 0.5s ease-out;
+        }
+
+        /* Fade-in animation for sections */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        footer {
+            background-color: #3b3b3b;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-top: 2px solid #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-layer layer1"></div>
+    <div class="background-layer layer2"></div>
+    <div class="background-layer layer3"></div>
+	<div class="background-layer layer4"></div>
+	<div class="background-layer layer5"></div>
+
+
+
+    <div class="floating-images">
+        <!-- Add your floating images here -->
+        <img src="images/float1.png" onclick="this.style.display='none'">
+        <img src="images/float2.png" onclick="this.style.display='none'">
+        <img src="images/float3.png" onclick="this.style.display='none'">
+        <!-- Add more floating images as needed -->
+    </div>
+
+    <div class="header">
+        <h1>Sayam_Dhingra_</h1>
+        <p>Ej zgc uslhvvgr hz zidglx xzij, qkuve ww xwte larv qg. </p>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="container fade-in" id="summary">
+        <div class="title-bar">
+            <div class="title">Summary</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <p>NYU grad student with 3 years in network security and technical support, skilled in quickly adapting and simplifying complex concepts proven by GPA 3.9. Willing to relocate anywhere. Certified Ethical Hacker with a score of 89% and active participation in NYU's cybersecurity club and national events top 3 rank in CTF competitions. Written over 10000 lines of secure code in Python and C++; trained multiple machine learning models with above 97% accuracy.</p>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="container fade-in" id="education">
+        <div class="title-bar">
+            <div class="title">Education</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <ul>
+                <li>
+                    <span class="project-title">New York University Tandon School of Engineering, New York, NY</span>
+                    <p>Master’s of Science in Computer Engineering; G.P.A: 3.9/4</p>
+                </li>
+                <li>
+                    <span class="project-title">Manipal University Jaipur, Jaipur, Rajasthan, India</span>
+                    <p>Bachelor’s of Technology in Computer Science; G.P.A: 3.2/4</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Work Experience Section -->
+    <div class="container fade-in" id="work-experience">
+        <div class="title-bar">
+            <div class="title">Work Experience</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <ul>
+                <li>
+                    <span class="work-title" onclick="toggleDescription(this)">Network Security Graduate Assistant, New York University, NY, USA</span>
+                    <i class="fas fa-briefcase"></i> 09/2023 - 01/2024
+                    <p class="work-description">Collaborating with course instructor (Prof. Danny Huang) to plan and execute classroom activities and assessments for a class of 250 students for the subject Network security.</p>
+                </li>
+                <li>
+                    <span class="work-title" onclick="toggleDescription(this)">Tier 2 Network Support Analyst, AlgoSec, USA Team</span>
+                    <i class="fas fa-briefcase"></i> 12/2020 - 08/2022
+                    <p class="work-description">Resolved 200+ network issues based on firewalls, switches, routers from all leading networking brands with AlgoSec Network Security Management Suite, for customers in the USA. Awarded “most closed cases of the year” award.</p>
+                </li>
+                <li>
+                    <span class="work-title" onclick="toggleDescription(this)">Tier 1 Network Support Analyst, AlgoSec, Europe Team</span>
+                    <i class="fas fa-briefcase"></i> 08/2020 - 12/2020
+                    <p class="work-description">Customized existing lab firewalls and network devices to best practices for compliance protocols like ISO27001, PCIDSS, etc. Reduced attack surface by 40%. Troubleshooted network threat modelling tools to ensure accurate results. Increased device report accuracy to 100% for customers where results were skewed. Achieved promotion to Tier 2 in 4 months.</p>
+                </li>
+                <li>
+                    <span class="work-title" onclick="toggleDescription(this)">Network Support Intern, AlgoSec, Europe Team</span>
+                    <i class="fas fa-briefcase"></i> 02/2020 - 08/2020
+                    <p class="work-description">Completed the required training in three months and began to shadow other technical support engineers. Started working on production technical cases in three months.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="container fade-in" id="projects">
+        <div class="title-bar">
+            <div class="title">Projects</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <ul>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Deep Learning Malware Analysis, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 08/2023 - 12/2023
+                    <p class="project-description">Trained and compared multiple state-of-the-art image classification models on images created from malware binaries and non-malware binaries. Achieved 97% accuracy. Earned the grade ‘A-’.</p>
+                </li>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Scan-Chain attack on Hardware AES, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 03/2023 - 03/2023
+                    <p class="project-description">Wrote a Python program to successfully implement a scan chain attack on a hardware device implementing AES-128 bit encryption. Secured the highest grade ‘A’.</p>
+                </li>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Hardware Trojan, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 03/2023 - 03/2023
+                    <p class="project-description">Programmed an STM32 device in C++ to access data from EEPROM, then programmed a Chip Whisperer Nano to act as a hardware Trojan to detect data access requests and manipulate data transfer. Obtained the highest grade “A”.</p>
+                </li>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Breath sensor for infants to detect SIDS, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 09/2022 - 12/2022
+                    <p class="project-description">Engineered and deployed a system of sensors that effectively monitored breathing patterns and rates in infants, detecting the chance of sudden infant death syndrome (SIDS) with an accuracy of 98%. Procured the second highest grade 'A-'.</p>
+                </li>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Silent Mode: Disabling All Devices, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 01/2023 - 05/2023
+                    <p class="project-description">Programmed an ESP32 board and Raspberry Pi Zero W to broadcast de-authentication packets for the selected AP and to create a custom network tunnel to control traffic flow. Highest grade ‘A’.</p>
+                </li>
+                <li>
+                    <span class="project-title" onclick="toggleDescription(this)">Satellite Object Detection, New York University, NY, USA</span>
+                    <i class="fas fa-code"></i> 01/2023 - 05/2023
+                    <p class="project-description">Developed a deep learning model based on U-Net which successfully classified pixels as buildings or non-buildings. Second highest score ‘A-’.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+	<!-- It is a simple Vigenere Cipher, keep looking for the key -->
+    <div class="container fade-in" id="skills">
+        <div class="title-bar">
+            <div class="title">Skills</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <ul class="skills-list">
+                <li><i class="fa fa-cog"></i> Deep Learning</li>
+                <li><i class="fa fa-cog"></i> Image Classification</li>
+                <li><i class="fa fa-cog"></i> Python Programming</li>
+                <li><i class="fa fa-cog"></i> C++ Programming</li>
+                <li><i class="fa fa-cog"></i> Embedded Systems</li>
+                <li><i class="fa fa-cog"></i> Hardware Security</li>
+                <li><i class="fa fa-cog"></i> ESP32 Development</li>
+                <li><i class="fa fa-cog"></i> Raspberry Pi Development</li>
+                <li><i class="fa fa-cog"></i> Sensor Engineering</li>
+                <li><i class="fa fa-cog"></i> Network Security</li>
+                <li><i class="fa fa-cog"></i> Technical Support</li>
+                <li><i class="fa fa-cog"></i> Network Troubleshooting</li>
+                <li><i class="fa fa-cog"></i> Firewalls and Switches</li>
+                <li><i class="fa fa-cog"></i> Compliance Protocols (ISO27001, PCIDSS)</li>
+                <li><i class="fa fa-cog"></i> Threat Modelling</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Links Section -->
+    <div class="container fade-in" id="links">
+        <div class="title-bar">
+            <div class="title">Links</div>
+            <div class="controls">
+                <div class="control close"></div>
+                <div class="control minimize" onclick="minimizeSection(this)"></div>
+                <div class="control maximize" onclick="maximizeSection(this)"></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="links">
+                <a href="https://github.com/notSayam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/sayam-dhingra-21a9a2172/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sayam Dhingra. All rights reserved.</p>
+    </footer>
+
+    <!-- Intersection Observer script for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.container').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Set initial random positions for floating images
+            const floatingImages = document.querySelectorAll('.floating-images img');
+            floatingImages.forEach(image => {
+                const x = Math.random() * (window.innerWidth - 50); // Adjust for image width
+                const y = Math.random() * (window.innerHeight - 50); // Adjust for image height
+                image.style.top = `${y}px`;
+                image.style.left = `${x}px`;
+            });
+
+            // Apply parallax effect on scroll
+            window.addEventListener('scroll', function() {
+                const scrolled = window.scrollY;
+                document.querySelector('.layer1').style.transform = `translateY(${scrolled * -0.8}px)`;
+                document.querySelector('.layer2').style.transform = `translateY(${scrolled * -0.4}px)`;
+                document.querySelector('.layer3').style.transform = `translateY(${scrolled * -0.2}px)`;
+                document.querySelector('.layer4').style.transform = `translateY(${scrolled * -0.2}px)`;
+                
+                // Parallax effect for floating images
+                floatingImages.forEach((image, index) => {
+                    const speed = 0.2 + index * 0.05; // Adjust speed for each image
+                    image.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        });
+
+        function minimizeSection(element) {
+            const section = element.closest('.container').querySelector('.section');
+            section.classList.remove('sweep-animation');
+            section.classList.add('sweep-up-animation');
+            setTimeout(() => {
+                section.style.display = 'none';
+            }, 500);
+        }
+
+        function maximizeSection(element) {
+            const section = element.closest('.container').querySelector('.section');
+            section.style.display = 'block';
+            section.classList.remove('sweep-up-animation');
+            section.classList.add('sweep-animation');
+        }
+
+        function toggleDescription(element) {
+            const description = element.nextElementSibling.nextElementSibling;
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+                description.classList.add('sweep-animation');
+            } else {
+                description.style.display = "none";
+                description.classList.remove('sweep-animation');
+            }
+        }
+		// The key to decrypt is "WebsitesAreCool".
+        function toggleSkills() {
+            const skillsList = document.querySelector('.skills-list');
+            if (skillsList.style.display === "none" || skillsList.style.display === "") {
+                skillsList.style.display = "block";
+                skillsList.classList.add('sweep-animation');
+            } else {
+                skillsList.style.display = "none";
+                skillsList.classList.remove('sweep-animation');
+            }
+        }
+    </script>
+</body>
+</html>
