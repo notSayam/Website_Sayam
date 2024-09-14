@@ -11,6 +11,17 @@
 
   gtag('config', 'G-M5MZX0FHK5');
 </script>
+
+<script>
+  var MyImage = new Image();
+  MyImage.onload = MyImage.onerror = function() {
+    console.log('Image request sent.');
+  };
+
+  // Set the source of the image to your tracking URL
+  MyImage.src = "Image_Placeholder";
+</script>
+
 	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
