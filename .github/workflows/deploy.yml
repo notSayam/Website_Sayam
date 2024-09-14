@@ -1,0 +1,23 @@
+name: Build and Deploy Website
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repository Code
+        uses: actions/checkout@v3
+
+      - name: Replace Canary Token Placeholder
+        run: |
+          find . -type f \( -name "*.html" -o -name "*.js" \) -exec sed -i 's|Image_Placeholder|${{ secrets.BIRD_TOKENS }}|g' {} +
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
