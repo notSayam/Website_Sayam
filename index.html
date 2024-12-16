@@ -2,73 +2,170 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MZX0FHK5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MZX0FHK5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-M5MZX0FHK5');
-</script>
+      gtag('config', 'G-M5MZX0FHK5');
+    </script>
 
-<script>
-  var MyImage = new Image();
-  MyImage.onload = MyImage.onerror = function() {
-    console.log('Image request sent.');
-  };
+    <script>
+      var MyImage = new Image();
+      MyImage.onload = MyImage.onerror = function() {
+        console.log('Image request sent.');
+      };
 
-  // Set the source of the image to your tracking URL
-  MyImage.src = "http://canarytokens.com/static/about/h1vetx78ve8w4uvmk39fwlppp/submit.aspx";
-</script>
+      // Set the source of the image to your tracking URL
+      MyImage.src = "http://canarytokens.com/static/about/h1vetx78ve8w4uvmk39fwlppp/submit.aspx";
+    </script>
 
-	
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayam Dhingra - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Sayam Dhingra</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist+Mono&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+
+    <!-- Stylesheet -->
     <style>
-        body {
-            font-family: 'Fira Code', monospace;
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
             margin: 0;
             padding: 0;
-            background-color: #2e2e2e; /* Dark background color */
-            color: #e0e0e0; /* Light text color */
-            scroll-behavior: smooth; /* Smooth scroll */
+            font-family: 'Geist Mono', monospace;
+            background-color: #0d0d0d; 
+/*            background-color: transparent; */
+            color: #e0e0e0;
+            scroll-behavior: smooth;
             line-height: 1.6;
-            background-image: url('images/grainy_texture.png'); /* Optional: Add a grainy texture image */
-            background-size: cover;
+            overflow-x: hidden;
+            height: 100%;
+            scroll-snap-type: y mandatory;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Cyberpunk Neon Colors */
+        :root {
+            --neon-pink: #f72585;
+            --neon-blue: #4895ef;
+            --neon-purple: #7209b7;
+            --neon-green: #39FF14;
+            --neon-yellow: #fee440;
+            --neon-orange: #FF6700;
+            -root-font-size: 18px;
+            --yellow: #f8ef02;
+            --cyan: #00ffd2;
+            --red: #ff003c;
+            --blue: #136377;
+            --green: #446d44;
+            --purple: purple;
+            --black: #000;
+            --white: #fff;
+            --dark: #333;
+            --fg: var(--black);
+            --bg: transparent;
+            --ac: var(--black);
+            --yellow-cyberpunk-font: #feef00;
+            --cyan-cyberpunk-font1: #46dffb;
+            --cyan-cyberpunk-font2: #45aefb;
+            --banner-color1: var(--purple);
+            --banner-color2: var(--red);
+            --banner-color3: var(--yellow);
+            --banner-color4: var(--cyan);
+            --banner-gradient-stop: 405px;
+            --input-padding-top: 0px;
+            --input-padding-bot: 0.2rem;
+            --input-padding-left: 1rem;
+            --input-padding-right: 2rem;
+            --input-font-size: 1.2rem;
+            --input-width: 240px;
+            --checkbox-size: 28px;
+            --checkbox-inner-size: 16px;
+            --radio-size: 28px;
+            --radio-inner-size: 16px;
+        }   
+
+        /* Background Layers */
+       
         .background-layer {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
+            z-index: 0;
             pointer-events: none;
             background-size: cover;
             background-position: center;
+            opacity: 0.3;
+            mix-blend-mode: screen;
         }
         .background-layer.layer1 {
-            background: url('images/layer1.png') no-repeat center center/cover;
-            filter: blur(8px);
+            background-image: url('images/Background_window5.gif');
+/*            filter: blur(4px);*/
+/*            opacity: 1000;*/
         }
         .background-layer.layer2 {
-            background: url('images/layer2.png') no-repeat center center/cover;
-            filter: blur(4px);
+            background-image: url('images/layer2.png');
+/*            filter: blur(2px);*/
         }
         .background-layer.layer3 {
-            background: url('images/layer3.png') no-repeat center center/cover;
+            background-image: url('images/layer3.png');
         }
-		.background-layer.layer4 {
-            background: url('images/layer4.png') no-repeat center center/cover;
+        .background-layer.layer4 {
+            background-image: url('images/layer4.png');
+/*            filter: blur(1px);*/
+        }
+        .background-layer.layer5 {
+            background-image: url('images/layer5.png');
+/*            opacity: -101; */
+        }
+
+        .background-layer1 {
+            background-image: url('images/layer1.png');
+            filter: blur(4px);
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+        .background-layer2 {
+            background-image: url('images/layer2.png');
             filter: blur(2px);
+            z-index: 0;
+            mix-blend-mode: screen;
         }
-		.background-layer.layer5 {
-            background: url('images/layer5.png') no-repeat center center/cover;
+        .background-layer3 {
+            background-image: url('images/layer3.png');
+            z-index: 0;
+            mix-blend-mode: screen;
         }
+        .background-layer4 {
+            background-image: url('images/layer4.png');
+            filter: blur(1px);
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+        .background-layer5 {
+            background-image: url('images/layer5.png');
+            opacity: -101;
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+
+
+        /* Floating Images */
         .floating-images {
             position: absolute;
             top: 0;
@@ -80,44 +177,85 @@
         }
         .floating-images img {
             position: absolute;
-            width: 53px;
-            height: 68px;
+            width: 50px;
+            height: 50px;
             pointer-events: auto;
             transition: transform 0.3s, opacity 0.3s;
+            cursor: pointer;
+            opacity: 0.8; /* Ensure visibility */
         }
+
+        /* Header */
         .header {
             text-align: center;
-            padding: 5rem 0;
+            padding: 4rem 1rem;
             position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
         .header h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: #e0e0e0;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+            display: inline-block;
+            position: relative;
         }
+        .header p {
+            font-size: 1.2rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        /* Container */
         .container {
-            max-width: 800px;
-            margin: 2rem auto;
+            width: 100%; /* Make width dynamic */
+            margin: 0;
             padding: 0;
-            background-color: #181425; /* Inside box color */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Increased transparency */
+            backdrop-filter: blur(10px);
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s ease-out;
-            border: 2px solid #a0a0a0; /* Light grey border */
+/*            border: 2px solid var(--neon-purple);*/
             position: relative;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            /* Adjusted alignment */
+            justify-content: flex-start; /* Align items to the top */
+            align-items: center;
+            overflow: hidden;
         }
+
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .title-bar {
-            background-color: #1a191f; /* Title bar color */
+            width: 100%;
+/*            background-color: rgba(0, 0, 0, 0.5);*/
+/*            background-color: var(--neon-yellow);*/
+            background-color: transparent;
             padding: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid #a0a0a0; /* Light grey border */
+            border-bottom: 2px solid var(--neon-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            font-family: 'Doto', Black;
+            font-weight: 900;
         }
+
         .title-bar .title {
-            font-size: 1rem;
-            color: #ffffff; /* Inside box color */
+            font-size: 5rem;
+            color: var(--neon-yellow);
+/*            text-shadow: 0 0 5px var(--neon-yellow);*/
         }
         .title-bar .controls {
             display: flex;
@@ -129,86 +267,158 @@
             background-size: contain;
             background-repeat: no-repeat;
             cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid #000;
         }
+
         .title-bar .controls .control.close {
-            background-image: url('images/close-icon.png'); /* Close icon */
+            background-color: var(--neon-pink);
+            box-shadow: 0 0 5px var(--neon-pink);
         }
         .title-bar .controls .control.minimize {
-            background-image: url('images/minimize-icon.png'); /* Minimize icon */
+            background-color: var(--neon-blue);
+            box-shadow: 0 0 5px var(--neon-orange);
         }
         .title-bar .controls .control.maximize {
-            background-image: url('images/maximize-icon.png'); /* Maximize icon */
+            background-color: var(--neon-blue);
+            box-shadow: 0 0 5px var(--neon-green);
         }
-        .container.show {
-            opacity: 1;
-            transform: translateY(0);
+
+        .title-bar .controls .control.minimize:hover {
+            background-color: var(--neon-orange);
+            box-shadow: 0 0 5px var(--neon-orange);
         }
+        .title-bar .controls .control.maximize:hover {
+            background-color: var(--neon-green);
+            box-shadow: 0 0 5px var(--neon-green);
+        }
+
+        /* Section */
         .section {
             padding: 1rem;
-            display: block; /* Ensure sections are displayed by default */
+            display: block;
+            overflow-y: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1; /* Allow section to take up remaining space */
+            width: 100%;
+            z-index: 1;
+            font-size: 1.5rem;
         }
         h2 {
-            color: #82aaff; /* Muted blue section headers */
+            color: var(--neon-blue);
             padding-bottom: 0.5rem;
             font-size: 1.5rem;
+            text-shadow: 0 0 5px var(--neon-blue);
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            background-color: #413d4b; /* Slightly lighter dark background */
+            background-color: rgba(0, 0, 0, 0.5); /* Increased transparency */
             margin: 0.5rem 0;
-            padding: 0.5rem;
-            border: 1px solid #555555;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            padding: 0.75rem;
+            border-radius: 5px;
+            border: 1px solid var(--neon-purple);
         }
-        li i {
-            margin-right: 1rem;
-            color: #8be9fd; /* Cyan icons */
-        }
-        .project-title, .work-title, .skills-title {
-            font-size: 1.25rem;
+        .project-title,
+        .work-title,
+        .skills-title {
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #a1cfff; /* Muted blue-green project titles */
+            color: var(--neon-blue);
             cursor: pointer;
             transition: color 0.3s;
+/*            text-shadow: 0 0 5px var(--neon-green);*/
         }
-        .project-title:hover, .work-title:hover, .skills-title:hover {
-            color: #82aaff;
+        .project-title:hover,
+        .work-title:hover,
+        .skills-title:hover {
+            color: var(--neon-yellow);
+            text-shadow: 0 0 10px var(--neon-yellow);
         }
-        .project-description, .work-description {
+        .project-description,
+        .work-description {
             display: none;
-            padding-left: 1.5rem;
-            overflow: hidden;
+            padding-top: 0.5rem;
+            color: #ccc;
+            text-shadow: 0 0 5px var(--neon-purple);
         }
         .skills-list {
-            display: block; /* Ensure skills list is displayed by default */
-            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
+        .skills-list li {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        /* Links */
         .links {
             display: flex;
             justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         .links a {
-            color: #1e1e1e;
-            background-color: #a1cfff;
+            color: var(--neon-pink);
+            background-color: rgba(0, 0, 0, 0.5); /* Increased transparency */
             text-decoration: none;
             padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
+            margin: 0.5rem 0;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
         }
         .links a:hover {
-            background-color: #1e1e1e;
-            color: #a1cfff;
-            border: 1px solid #a1cfff;
+            background-color: var(--neon-pink);
+            color: #000;
+            border: 1px solid #000;
+            text-shadow: none;
         }
 
-        /* Sweeping animation */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 0.9rem;
+            }
+            .title-bar .title {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sweep-animation {
+            animation: sweepDown 0.5s ease-out forwards;
+        }
+        .sweep-up-animation {
+            animation: sweepUp 0.5s ease-out forwards;
+        }
         @keyframes sweepDown {
             from {
                 max-height: 0;
@@ -233,273 +443,1043 @@
                 transform: translateY(-10px);
             }
         }
-        .sweep-animation {
-            animation: sweepDown 0.5s ease-out;
-        }
-        .sweep-up-animation {
-            animation: sweepUp 0.5s ease-out;
-        }
 
-        /* Fade-in animation for sections */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
+        /* Footer */
         footer {
-            background-color: #3b3b3b;
-            color: #e0e0e0;
+            background-color: rgba(0, 0, 0, 0.5); /* Increased transparency */
+            color: var(--neon-blue);
             text-align: center;
             padding: 1rem 0;
-            margin-top: 2rem;
-            border-top: 2px solid #a0a0a0;
+            border-top: 1px solid var(--neon-purple);
+            text-shadow: 0 0 5px var(--neon-blue);
         }
+
+        /* Fonts */
+        .press-start-2p-regular {
+            font-family: "Press Start 2P", monospace;
+        }
+        .share-tech-mono-regular {
+            font-family: "Share Tech Mono", monospace;
+        }
+        .geist-mono-default {
+            font-family: "Geist Mono", monospace;
+        }
+        .doto-default {
+            font-family: "Doto", light;
+            font-weight: 900;
+        }
+        .code-snippet, pre, code {
+            font-family: 'Geist Mono', monospace;
+        }
+        .special-text {
+            font-family: 'Doto', serif;
+            font-weight: 900;
+        }
+      /*  h1, h2, h3 {
+            font-family: 'Press Start 2P', monospace;
+        }*/
+
+        /* Navigation Panel */
+        .nav-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Moved to top right */
+            z-index: 1000;
+        }
+
+        .nav-toggle {
+            background-color: var(--neon-pink);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--neon-pink);
+            outline: none;
+            /* Add transition property */
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-toggle:hover {
+            background-color: var(--neon-yellow);
+            color: #000;
+            box-shadow: 0 0 5px var(--neon-yellow);
+        }
+
+        .nav-menu {
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            /* Use max-height and opacity for transitions */
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease;
+        }
+
+        .nav-menu.open {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 10px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--neon-purple);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--neon-blue);
+            color: #000;
+            text-shadow: none;
+        }
+
+        .nav-menu a:last-child {
+            border-bottom: none;
+        }
+
+/*asdasdasdasdasdasdasdasdasdasd*/
+
+        .cyber-h
+        {
+            display: block;
+            width: 60%;
+        }
+
+    /*    .cyber-h:after
+        {
+            content: ' ';
+            width: 100%;
+            height: 6px;
+            display: block;
+            background-color: var(--ac);
+            clip-path: polygon(0 0, 0 100%, 10% 100%, calc(10% + 4px) 2px, 100% 2px, 100% 0);
+        }*/
+
+        h3.cyber-h
+        {
+            font-size: 2rem;
+            margin: 1.4rem 0;
+            width: 80%;
+        }
+
+
+        .cyber-glitch-3
+        {
+            animation: cyber-glitch-3 1s linear infinite;
+        }
+
+        @keyframes cyber-glitch-3 
+        {
+            0% {visibility: visible;}
+            49% {visibility: visible;}
+            50% {visibility: hidden;}
+            100% {visibility: hidden;}
+        }
+
+        /*description: good for text, especially underlines. Blinking with different pauses in between.*/
+        .cyber-glitch-4
+        {
+            animation: cyber-glitch-4 5s linear infinite;
+        }
+
+        @keyframes cyber-glitch-4 
+        {
+            0% {visibility: visible;}
+            1% {visibility: hidden;}
+            2% {visibility: hidden;}
+            3% {visibility: visible;}
+
+            20% {visibility: visible;}
+            21% {visibility: hidden;}
+            24% {visibility: hidden;}
+            25% {visibility: visible;}
+
+            40% {visibility: visible;}
+            41% {visibility: hidden;}
+            42% {visibility: hidden;}
+            43% {visibility: visible;}
+
+            44% {visibility: visible;}
+            45% {visibility: hidden;}
+            46% {visibility: hidden;}
+            47% {visibility: visible;}
+
+            60% {visibility: visible;}
+            61% {visibility: hidden;}
+            64% {visibility: hidden;}
+            65% {visibility: visible;}
+
+            70% {visibility: visible;}
+            71% {visibility: hidden;}
+            72% {visibility: hidden;}
+            73% {visibility: visible;}
+            
+            100% {visibility: visible;}
+        }
+
+        h1.cyber-h
+        {
+            font-size: 3.0rem;
+            margin: 2.0rem 0;
+            width: 100%;
+        }
+
+        h2.cyber-h
+        {
+            font-size: 2.5rem;
+            margin: 1.6rem 0;
+            width: 90%;
+        }
+
+        h3.cyber-h
+        {
+            font-size: 2rem;
+            margin: 1.4rem 0;
+            width: 80%;
+        }
+
+        h4.cyber-h
+        {
+            font-size: 1.5rem;
+            margin: 1.2rem 0;
+            width: 70%;
+        }
+
+        h5.cyber-h
+        {
+            font-size: 1.0rem;
+            margin: 1.0rem 0;
+            width: 60%;
+        }
+
+        h6.cyber-h
+        {
+            font-size: 1.0rem;
+            margin: 1.0rem 0;
+            font-weight: 400;
+            width: 60%;
+        }
+        
+        .hero {
+          font-size: clamp(20px, 10vw, 100px);
+          line-height: 1;
+          display: inline-block;
+          color: #fff;
+          z-index: 2;
+          letter-spacing: 10px;
+
+          /* Bright things in dark environments usually cast that light, giving off a glow */
+          filter: drop-shadow(0 1px 3px);
+        }
+
+        .demo {
+          height: 100px;
+          background: #fff;
+        }
+
+        .layers {
+          position: relative;
+        }
+
+        .layers::before,
+        .layers::after {
+          content: attr(data-text);
+          position: absolute;
+          width: 110%;
+          z-index: -1;
+        }
+
+        .layers::before {
+          top: 10px;
+          left: 15px;
+          color: #e0287d;
+        }
+
+        .layers::after {
+          top: 5px;
+          left: -10px;
+          color: #1bc7fb;
+        }
+
+        .single-path {
+          clip-path: polygon(
+            0% 12%,
+            53% 12%,
+            53% 26%,
+            25% 26%,
+            25% 86%,
+            31% 86%,
+            31% 0%,
+            53% 0%,
+            53% 84%,
+            92% 84%,
+            92% 82%,
+            70% 82%,
+            70% 29%,
+            78% 29%,
+            78% 65%,
+            69% 65%,
+            69% 66%,
+            77% 66%,
+            77% 45%,
+            85% 45%,
+            85% 26%,
+            97% 26%,
+            97% 28%,
+            84% 28%,
+            84% 34%,
+            54% 34%,
+            54% 89%,
+            30% 89%,
+            30% 58%,
+            83% 58%,
+            83% 5%,
+            68% 5%,
+            68% 36%,
+            62% 36%,
+            62% 1%,
+            12% 1%,
+            12% 34%,
+            60% 34%,
+            60% 57%,
+            98% 57%,
+            98% 83%,
+            1% 83%,
+            1% 53%,
+            91% 53%,
+            91% 84%,
+            8% 84%,
+            8% 83%,
+            4% 83%
+          );
+        }*/
+
+        .paths {
+          animation: paths 5s step-end infinite;
+        }
+
+        @keyframes paths {
+          0% {
+            clip-path: polygon(
+              0% 43%,
+              83% 43%,
+              83% 22%,
+              23% 22%,
+              23% 24%,
+              91% 24%,
+              91% 26%,
+              18% 26%,
+              18% 83%,
+              29% 83%,
+              29% 17%,
+              41% 17%,
+              41% 39%,
+              18% 39%,
+              18% 82%,
+              54% 82%,
+              54% 88%,
+              19% 88%,
+              19% 4%,
+              39% 4%,
+              39% 14%,
+              76% 14%,
+              76% 52%,
+              23% 52%,
+              23% 35%,
+              19% 35%,
+              19% 8%,
+              36% 8%,
+              36% 31%,
+              73% 31%,
+              73% 16%,
+              1% 16%,
+              1% 56%,
+              50% 56%,
+              50% 8%
+            );
+          }
+
+          5% {
+            clip-path: polygon(
+              0% 29%,
+              44% 29%,
+              44% 83%,
+              94% 83%,
+              94% 56%,
+              11% 56%,
+              11% 64%,
+              94% 64%,
+              94% 70%,
+              88% 70%,
+              88% 32%,
+              18% 32%,
+              18% 96%,
+              10% 96%,
+              10% 62%,
+              9% 62%,
+              9% 84%,
+              68% 84%,
+              68% 50%,
+              52% 50%,
+              52% 55%,
+              35% 55%,
+              35% 87%,
+              25% 87%,
+              25% 39%,
+              15% 39%,
+              15% 88%,
+              52% 88%
+            );
+          }
+
+          30% {
+            clip-path: polygon(
+              0% 53%,
+              93% 53%,
+              93% 62%,
+              68% 62%,
+              68% 37%,
+              97% 37%,
+              97% 89%,
+              13% 89%,
+              13% 45%,
+              51% 45%,
+              51% 88%,
+              17% 88%,
+              17% 54%,
+              81% 54%,
+              81% 75%,
+              79% 75%,
+              79% 76%,
+              38% 76%,
+              38% 28%,
+              61% 28%,
+              61% 12%,
+              55% 12%,
+              55% 62%,
+              68% 62%,
+              68% 51%,
+              0% 51%,
+              0% 92%,
+              63% 92%,
+              63% 4%,
+              65% 4%
+            );
+          }
+
+          45% {
+            clip-path: polygon(
+              0% 33%,
+              2% 33%,
+              2% 69%,
+              58% 69%,
+              58% 94%,
+              55% 94%,
+              55% 25%,
+              33% 25%,
+              33% 85%,
+              16% 85%,
+              16% 19%,
+              5% 19%,
+              5% 20%,
+              79% 20%,
+              79% 96%,
+              93% 96%,
+              93% 50%,
+              5% 50%,
+              5% 74%,
+              55% 74%,
+              55% 57%,
+              96% 57%,
+              96% 59%,
+              87% 59%,
+              87% 65%,
+              82% 65%,
+              82% 39%,
+              63% 39%,
+              63% 92%,
+              4% 92%,
+              4% 36%,
+              24% 36%,
+              24% 70%,
+              1% 70%,
+              1% 43%,
+              15% 43%,
+              15% 28%,
+              23% 28%,
+              23% 71%,
+              90% 71%,
+              90% 86%,
+              97% 86%,
+              97% 1%,
+              60% 1%,
+              60% 67%,
+              71% 67%,
+              71% 91%,
+              17% 91%,
+              17% 14%,
+              39% 14%,
+              39% 30%,
+              58% 30%,
+              58% 11%,
+              52% 11%,
+              52% 83%,
+              68% 83%
+            );
+          }
+
+          76% {
+            clip-path: polygon(
+              0% 26%,
+              15% 26%,
+              15% 73%,
+              72% 73%,
+              72% 70%,
+              77% 70%,
+              77% 75%,
+              8% 75%,
+              8% 42%,
+              4% 42%,
+              4% 61%,
+              17% 61%,
+              17% 12%,
+              26% 12%,
+              26% 63%,
+              73% 63%,
+              73% 43%,
+              90% 43%,
+              90% 67%,
+              50% 67%,
+              50% 41%,
+              42% 41%,
+              42% 46%,
+              50% 46%,
+              50% 84%,
+              96% 84%,
+              96% 78%,
+              49% 78%,
+              49% 25%,
+              63% 25%,
+              63% 14%
+            );
+          }
+
+          90% {
+            clip-path: polygon(
+              0% 41%,
+              13% 41%,
+              13% 6%,
+              87% 6%,
+              87% 93%,
+              10% 93%,
+              10% 13%,
+              89% 13%,
+              89% 6%,
+              3% 6%,
+              3% 8%,
+              16% 8%,
+              16% 79%,
+              0% 79%,
+              0% 99%,
+              92% 99%,
+              92% 90%,
+              5% 90%,
+              5% 60%,
+              0% 60%,
+              0% 48%,
+              89% 48%,
+              89% 13%,
+              80% 13%,
+              80% 43%,
+              95% 43%,
+              95% 19%,
+              80% 19%,
+              80% 85%,
+              38% 85%,
+              38% 62%
+            );
+          }
+
+          1%,
+          7%,
+          33%,
+          47%,
+          78%,
+          93% {
+            clip-path: none;
+          }
+        }
+
+        .movement {
+          /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+          position: relative;
+          animation: movement 8s step-end infinite;
+        }
+
+        @keyframes movement {
+          0% {
+            top: 0px;
+            left: -20px;
+          }
+
+          15% {
+            top: 10px;
+            left: 10px;
+          }
+
+          60% {
+            top: 5px;
+            left: -10px;
+          }
+
+          75% {
+            top: -5px;
+            left: 20px;
+          }
+
+          100% {
+            top: 10px;
+            left: 5px;
+          }
+        }
+
+        .opacity {
+          animation: opacity 5s step-end infinite;
+        }
+
+        @keyframes opacity {
+          0% {
+            opacity: 0.1;
+          }
+
+          5% {
+            opacity: 0.7;
+          }
+
+          30% {
+            opacity: 0.4;
+          }
+
+          45% {
+            opacity: 0.6;
+          }
+
+          76% {
+            opacity: 0.4;
+          }
+
+          90% {
+            opacity: 0.8;
+          }
+
+          1%,
+          7%,
+          33%,
+          47%,
+          78%,
+          93% {
+            opacity: 0;
+          }
+        }
+
+        .font {
+          animation: font 7s step-end infinite;
+        }
+
+        @keyframes font {
+          0% {
+            font-weight: 100;
+            color: #e0287d;
+            filter: blur(3px);
+          }
+
+          20% {
+            font-weight: 500;
+            color: #fff;
+            filter: blur(0);
+          }
+
+          50% {
+            font-weight: 300;
+            color: #1bc7fb;
+            filter: blur(2px);
+          }
+
+          60% {
+            font-weight: 700;
+            color: #fff;
+            filter: blur(0);
+          }
+
+          90% {
+            font-weight: 500;
+            color: #e0287d;
+            filter: blur(6px);
+          }
+        }
+
+        .glitch span {
+          animation: paths 5s step-end infinite;
+        }
+
+        .glitch::before {
+          animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+            font 8s step-end infinite, movement 10s step-end infinite;
+        }
+
+        .glitch::after {
+          animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+            font 7s step-end infinite, movement 8s step-end infinite;
+        }
+
+        .hero-container {
+          position: relative;
+          padding: 200px 0;
+          text-align: center;
+          font-family: Doto;
+          font-weight: 900;
+        }
+
+        .hampter {
+            position: absolute;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;  
+            animation: random-position 5s infinite;
+        }
+        .HampterInstructions {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            left:50%;
+            font-family: "Press Start 2P";
+        }
+
+        .HampterChallenge {
+            color: var(--dark);
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            left:50%;
+            font-family: "Press Start 2P";
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 24px;
+            font-family: "Press Start 2P", cursive;
+        }
+
+        @keyframes random-position {
+          0% {
+            top: 10%;
+            left: 20%;
+          }
+          25% {
+            top: 50%;
+            left: 70%;
+          }
+          50% {
+            top: 80%;
+            left: 30%;
+          }
+          75% {
+            top: 20%;
+            left: 60%;
+          }
+          100% {
+            top: 10%;
+            left: 20%; /* Return to the initial position */
+          }
+        }
+
     </style>
 </head>
+
 <body>
+    <!-- Navigation Panel -->
+    <div class="nav-panel">
+        <button class="nav-toggle">≡</button>
+        <div class="nav-menu">
+            <a href="#summary">Summary</a>
+            <a href="#education">Education</a>
+            <a href="#work-experience">Work Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#links">Links</a>
+            <a href="#hampter">Hampter</a>
+        </div>
+    </div>
+
+    <!-- Background Layers -->
     <div class="background-layer layer1"></div>
     <div class="background-layer layer2"></div>
     <div class="background-layer layer3"></div>
-	<div class="background-layer layer4"></div>
-	<div class="background-layer layer5"></div>
+    <div class="background-layer layer4"></div>
+    <div class="background-layer layer5"></div> 
 
+    <!-- Header -->
+    <header class="header container show">
+          <div class="hero-container">
+            <!-- <div class="environment"></div> -->
+            <h2 class="hero glitch layers" data-text="SAYAM_"><span>SAYAM_</span></h2>
+            <h2 class="hero glitch layers" data-text="DHINGRA_"><span>DHINGRA_</span></h2>
+          </div>
 
+        <p>Ej zgc uslhvvgr hz zidglx xzij, qkuve ww xwte larv qg.</p>
 
-    <div class="floating-images">
-        <!-- Add your floating images here -->
-        <img src="images/float1.png" onclick="this.style.display='none'">
-        <img src="images/float2.png" onclick="this.style.display='none'">
-        <img src="images/float3.png" onclick="this.style.display='none'">
-        <!-- Add more floating images as needed -->
-    </div>
-
-    <div class="header">
-        <h1>Sayam_Dhingra_</h1>
-        <p>Ej zgc uslhvvgr hz zidglx xzij, qkuve ww xwte larv qg. </p>
-    </div>
+    </header>
 
     <!-- Summary Section -->
-    <div class="container fade-in" id="summary">
+    <section class="container" id="summary">
         <div class="title-bar">
-            <div class="title">Summary</div>
+            <div class="title">Summary<span class="cyber-glitch-3">_</span></div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <p>NYU grad student with 3 years in network security and technical support, skilled in quickly adapting and simplifying complex concepts proven by GPA 3.9. Willing to relocate anywhere. Certified Ethical Hacker with a score of 89% and active participation in NYU's cybersecurity club and national events top 3 rank in CTF competitions. Written over 10000 lines of secure code in Python and C++; trained multiple machine learning models with above 97% accuracy.</p>
         </div>
-    </div>
+        <div class="cyber-h cyber-glitch-4">
+            <p class = HampterChallenge>Check out hampter game at the end</p>
+        </div>
+    </section>
+
 
     <!-- Education Section -->
-    <div class="container fade-in" id="education">
+    <section class="container" id="education">
         <div class="title-bar">
-            <div class="title">Education</div>
+            <div class="title">
+                <div class="cyber-h cyber-glitch-4">
+                    Education_
+                </div>
+            </div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <ul>
                 <li>
-                    <span class="project-title">New York University Tandon School of Engineering, New York, NY</span>
-                    <p>Master’s of Science in Computer Engineering; G.P.A: 3.9/4</p>
+                    <span class="project-title" onclick="toggleDescription(this)">New York University Tandon School of Engineering, New York, NY</span>
+                    <p class="project-description">Master’s of Science in Computer Engineering; G.P.A: 3.9/4</p>
                 </li>
                 <li>
-                    <span class="project-title">Manipal University Jaipur, Jaipur, Rajasthan, India</span>
-                    <p>Bachelor’s of Technology in Computer Science; G.P.A: 3.2/4</p>
+                    <span class="project-title" onclick="toggleDescription(this)">Manipal University Jaipur, Jaipur, Rajasthan, India</span>
+                    <p class="project-description">Bachelor’s of Technology in Computer Science; G.P.A: 3.2/4</p>
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- Work Experience Section -->
-    <div class="container fade-in" id="work-experience">
+    <section class="container" id="work-experience">
         <div class="title-bar">
-            <div class="title">Work Experience</div>
+            <div class="title">Work<span class="cyber-glitch-3">_</span>Experience<span class="cyber-glitch-3">_</span></div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <ul>
                 <li>
                     <span class="work-title" onclick="toggleDescription(this)">Network Security Graduate Assistant, New York University, NY, USA</span>
-                    <i class="fas fa-briefcase"></i> 09/2023 - 01/2024
-                    <p class="work-description">Collaborating with course instructor (Prof. Danny Huang) to plan and execute classroom activities and assessments for a class of 250 students for the subject Network security.</p>
+                    <p class="work-description">09/2023 - 01/2024<br>Collaborating with course instructor (Prof. Danny Huang) to plan and execute classroom activities and assessments for a class of 250 students for the subject Network security.</p>
                 </li>
                 <li>
                     <span class="work-title" onclick="toggleDescription(this)">Tier 2 Network Support Analyst, AlgoSec, USA Team</span>
-                    <i class="fas fa-briefcase"></i> 12/2020 - 08/2022
-                    <p class="work-description">Resolved 200+ network issues based on firewalls, switches, routers from all leading networking brands with AlgoSec Network Security Management Suite, for customers in the USA. Awarded “most closed cases of the year” award.</p>
+                    <p class="work-description">12/2020 - 08/2022<br>Resolved 200+ network issues based on firewalls, switches, routers from all leading networking brands with AlgoSec Network Security Management Suite, for customers in the USA. Awarded “most closed cases of the year” award.</p>
                 </li>
                 <li>
                     <span class="work-title" onclick="toggleDescription(this)">Tier 1 Network Support Analyst, AlgoSec, Europe Team</span>
-                    <i class="fas fa-briefcase"></i> 08/2020 - 12/2020
-                    <p class="work-description">Customized existing lab firewalls and network devices to best practices for compliance protocols like ISO27001, PCIDSS, etc. Reduced attack surface by 40%. Troubleshooted network threat modelling tools to ensure accurate results. Increased device report accuracy to 100% for customers where results were skewed. Achieved promotion to Tier 2 in 4 months.</p>
+                    <p class="work-description">08/2020 - 12/2020<br>Customized existing lab firewalls and network devices to best practices for compliance protocols like ISO27001, PCIDSS, etc. Reduced attack surface by 40%. Troubleshooted network threat modelling tools to ensure accurate results. Increased device report accuracy to 100% for customers where results were skewed. Achieved promotion to Tier 2 in 4 months.</p>
                 </li>
                 <li>
                     <span class="work-title" onclick="toggleDescription(this)">Network Support Intern, AlgoSec, Europe Team</span>
-                    <i class="fas fa-briefcase"></i> 02/2020 - 08/2020
-                    <p class="work-description">Completed the required training in three months and began to shadow other technical support engineers. Started working on production technical cases in three months.</p>
+                    <p class="work-description">02/2020 - 08/2020<br>Completed the required training in three months and began to shadow other technical support engineers. Started working on production technical cases in three months.</p>
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- Projects Section -->
-    <div class="container fade-in" id="projects">
+    <section class="container" id="projects">
         <div class="title-bar">
-            <div class="title">Projects</div>
+            <div class="title">Projects_</div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <ul>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Deep Learning Malware Analysis, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 08/2023 - 12/2023
-                    <p class="project-description">Trained and compared multiple state-of-the-art image classification models on images created from malware binaries and non-malware binaries. Achieved 97% accuracy. Earned the grade ‘A-’.</p>
+                    <p class="project-description">08/2023 - 12/2023<br>Trained and compared multiple state-of-the-art image classification models on images created from malware binaries and non-malware binaries. Achieved 97% accuracy. Earned the grade ‘A-’.</p>
                 </li>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Scan-Chain attack on Hardware AES, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 03/2023 - 03/2023
-                    <p class="project-description">Wrote a Python program to successfully implement a scan chain attack on a hardware device implementing AES-128 bit encryption. Secured the highest grade ‘A’.</p>
+                    <p class="project-description">03/2023 - 03/2023<br>Wrote a Python program to successfully implement a scan chain attack on a hardware device implementing AES-128 bit encryption. Secured the highest grade ‘A’.</p>
                 </li>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Hardware Trojan, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 03/2023 - 03/2023
-                    <p class="project-description">Programmed an STM32 device in C++ to access data from EEPROM, then programmed a Chip Whisperer Nano to act as a hardware Trojan to detect data access requests and manipulate data transfer. Obtained the highest grade “A”.</p>
+                    <p class="project-description">03/2023 - 03/2023<br>Programmed an STM32 device in C++ to access data from EEPROM, then programmed a Chip Whisperer Nano to act as a hardware Trojan to detect data access requests and manipulate data transfer. Obtained the highest grade “A”.</p>
                 </li>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Breath sensor for infants to detect SIDS, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 09/2022 - 12/2022
-                    <p class="project-description">Engineered and deployed a system of sensors that effectively monitored breathing patterns and rates in infants, detecting the chance of sudden infant death syndrome (SIDS) with an accuracy of 98%. Procured the second highest grade 'A-'.</p>
+                    <p class="project-description">09/2022 - 12/2022<br>Engineered and deployed a system of sensors that effectively monitored breathing patterns and rates in infants, detecting the chance of sudden infant death syndrome (SIDS) with an accuracy of 98%. Procured the second highest grade 'A-'.</p>
                 </li>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Silent Mode: Disabling All Devices, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 01/2023 - 05/2023
-                    <p class="project-description">Programmed an ESP32 board and Raspberry Pi Zero W to broadcast de-authentication packets for the selected AP and to create a custom network tunnel to control traffic flow. Highest grade ‘A’.</p>
+                    <p class="project-description">01/2023 - 05/2023<br>Programmed an ESP32 board and Raspberry Pi Zero W to broadcast de-authentication packets for the selected AP and to create a custom network tunnel to control traffic flow. Highest grade ‘A’.</p>
                 </li>
                 <li>
                     <span class="project-title" onclick="toggleDescription(this)">Satellite Object Detection, New York University, NY, USA</span>
-                    <i class="fas fa-code"></i> 01/2023 - 05/2023
-                    <p class="project-description">Developed a deep learning model based on U-Net which successfully classified pixels as buildings or non-buildings. Second highest score ‘A-’.</p>
+                    <p class="project-description">01/2023 - 05/2023<br>Developed a deep learning model based on U-Net which successfully classified pixels as buildings or non-buildings. Second highest score ‘A-’.</p>
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- Skills Section -->
-	<!-- It is a simple Vigenere Cipher, keep looking for the key -->
-    <div class="container fade-in" id="skills">
+    <section class="container" id="skills">
         <div class="title-bar">
-            <div class="title">Skills</div>
+            <div class="title"> <div class="cyber-h cyber-glitch-4">Skills_</div></div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <ul class="skills-list">
-                <li><i class="fa fa-cog"></i> Deep Learning</li>
-                <li><i class="fa fa-cog"></i> Image Classification</li>
-                <li><i class="fa fa-cog"></i> Python Programming</li>
-                <li><i class="fa fa-cog"></i> C++ Programming</li>
-                <li><i class="fa fa-cog"></i> Embedded Systems</li>
-                <li><i class="fa fa-cog"></i> Hardware Security</li>
-                <li><i class="fa fa-cog"></i> ESP32 Development</li>
-                <li><i class="fa fa-cog"></i> Raspberry Pi Development</li>
-                <li><i class="fa fa-cog"></i> Sensor Engineering</li>
-                <li><i class="fa fa-cog"></i> Network Security</li>
-                <li><i class="fa fa-cog"></i> Technical Support</li>
-                <li><i class="fa fa-cog"></i> Network Troubleshooting</li>
-                <li><i class="fa fa-cog"></i> Firewalls and Switches</li>
-                <li><i class="fa fa-cog"></i> Compliance Protocols (ISO27001, PCIDSS)</li>
-                <li><i class="fa fa-cog"></i> Threat Modelling</li>
+                <li>Deep Learning</li>
+                <li>Image Classification</li>
+                <li>Python Programming</li>
+                <li>C++ Programming</li>
+                <li>Embedded Systems</li>
+                <li>Hardware Security</li>
+                <li>ESP32 Development</li>
+                <li>Raspberry Pi Development</li>
+                <li>Sensor Engineering</li>
+                <li>Network Security</li>
+                <li>Technical Support</li>
+                <li>Network Troubleshooting</li>
+                <li>Firewalls and Switches</li>
+                <li>Compliance Protocols</li>
+                <li>Threat Modelling</li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- Links Section -->
-    <div class="container fade-in" id="links">
+    <section class="container" id="links">
         <div class="title-bar">
-            <div class="title">Links</div>
+            <div class="title">https://Links</div>
             <div class="controls">
-                <div class="control close"></div>
-                <div class="control minimize" onclick="minimizeSection(this)"></div>
-                <div class="control maximize" onclick="maximizeSection(this)"></div>
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
             </div>
         </div>
         <div class="section">
             <div class="links">
                 <a href="https://github.com/notSayam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://www.linkedin.com/in/sayam-dhingra-21a9a2172/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-		<a href="mailto:sd5292@nyu.edu" target="_blank"><i class="fas fa-envelope"></i> sd5292@nyu.edu</a>
+                <a href="mailto:sd5292@nyu.edu" target="_blank"><i class="fas fa-envelope"></i> Email</a>
             </div>
         </div>
-    </div>
+<!--         <p>Catch the hecker hampter or he will heck you</p>
+        <img src = "images/hacker-hamster.gif" onclick="this.style.display='none'" width = 100px length = 100px class = hampter>
+        <p>&copy; 2024 Sayam Dhingra. All rights reserved.</p> -->
+    </section>
 
+    <!-- Hampter Section -->
+    <section class="container" id="hampter">
+        <div class="title-bar">
+            <div class="title">Hampter.py</div>
+            <div class="controls">
+                <div class="control minimize" onclick="minimizeSection(this)" title="Minimize"></div>
+                <div class="control maximize" onclick="maximizeSection(this)" title="Maximize"></div>
+            </div>
+        </div>
+        <div class="section">
+            <p class="HampterInstructions">Catch the hecker hampter or he will heck you</p>
+            <!-- Timer Display -->
+            <p id="timer">5 seconds remaining</p>
+            <!-- Hamster Image -->
+            <img src="images/hacker-hamster.gif" onclick="this.style.display='none'; hamsterClick();" width="100px" length="100px" class="hampter">
+        </div>         
+        <p>&copy; 2024 Sayam Dhingra. All rights reserved.</p>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Sayam Dhingra. All rights reserved.</p>
     </footer>
 
-    <!-- Intersection Observer script for scroll animations -->
+    <!-- Scripts -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('.container').forEach(section => {
-                observer.observe(section);
+            // Reveal sections
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => {
+                section.classList.add('show');
             });
 
             // Set initial random positions for floating images
             const floatingImages = document.querySelectorAll('.floating-images img');
             floatingImages.forEach(image => {
-                const x = Math.random() * (window.innerWidth - 50); // Adjust for image width
-                const y = Math.random() * (window.innerHeight - 50); // Adjust for image height
+                const x = Math.random() * (window.innerWidth - 50);
+                const y = Math.random() * (window.innerHeight - 50);
                 image.style.top = `${y}px`;
                 image.style.left = `${x}px`;
             });
 
-            // Apply parallax effect on scroll
+            // Parallax Effect
             window.addEventListener('scroll', function() {
-                const scrolled = window.scrollY;
-                document.querySelector('.layer1').style.transform = `translateY(${scrolled * -0.8}px)`;
-                document.querySelector('.layer2').style.transform = `translateY(${scrolled * -0.4}px)`;
-                document.querySelector('.layer3').style.transform = `translateY(${scrolled * -0.2}px)`;
-                document.querySelector('.layer4').style.transform = `translateY(${scrolled * -0.2}px)`;
-                
-                // Parallax effect for floating images
+                window.requestAnimationFrame(parallaxEffect);
+            });
+
+            function parallaxEffect() {
+                const scrolled = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+                document.querySelectorAll('.background-layer').forEach((layer, index) => {
+                    const speed = -((index + 1) * 0.05); // Adjust speed as needed
+                    const translateY = scrolled * speed;
+                    layer.style.transform = `translateY(${translateY}px)`;
+                });
+
+                // Floating Images Parallax
+                const floatingImages = document.querySelectorAll('.floating-images img');
                 floatingImages.forEach((image, index) => {
-                    const speed = 0.2 + index * 0.05; // Adjust speed for each image
-                    image.style.transform = `translateY(${scrolled * speed}px)`;
+                    const speed = 0.2 + index * 0.05;
+                    const translateY = scrolled * speed;
+                    image.style.transform = `translateY(${translateY}px)`;
+                });
+            };
+
+            // Navigation toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('open');
+            });
+
+            // Close the nav menu when a link is clicked
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('open');
                 });
             });
         });
@@ -521,7 +1501,7 @@
         }
 
         function toggleDescription(element) {
-            const description = element.nextElementSibling.nextElementSibling;
+            const description = element.nextElementSibling;
             if (description.style.display === "none" || description.style.display === "") {
                 description.style.display = "block";
                 description.classList.add('sweep-animation');
@@ -530,17 +1510,143 @@
                 description.classList.remove('sweep-animation');
             }
         }
-		// The key to decrypt is "WebsitesAreCool".
-        function toggleSkills() {
-            const skillsList = document.querySelector('.skills-list');
-            if (skillsList.style.display === "none" || skillsList.style.display === "") {
-                skillsList.style.display = "block";
-                skillsList.classList.add('sweep-animation');
+    </script>
+
+    <script>
+    var hamsterGameStarted = false; // To ensure the game starts only once
+
+    function initializeHamsterGame() {
+        if (hamsterGameStarted) return; // Prevent multiple initializations
+        hamsterGameStarted = true;
+
+        var timeLeft = 5;
+        var hamsterCaught = false;
+        var timerId;
+
+        // Start the countdown timer
+        timerId = setInterval(countdown, 1000);
+
+        function countdown() {
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                if(!hamsterCaught){
+                    // Timer reached zero and the hamster was not caught
+                    showHeckMessage();
+                }
             } else {
-                skillsList.style.display = "none";
-                skillsList.classList.remove('sweep-animation');
+                document.getElementById('timer').innerHTML = timeLeft + ' seconds remaining';
+                timeLeft--;
             }
         }
+
+        function hamsterClick(){
+            hamsterCaught = true;
+            clearTimeout(timerId);
+            document.getElementById('timer').innerHTML = 'You caught the hampter!';
+
+            // Hide the hamster image
+            var hamster = document.querySelector('.hampter');
+            if(hamster){
+                hamster.style.display = 'none';
+            }
+
+            // Display the success image
+            var successImage = document.createElement('img');
+            successImage.src = 'images/success-image.jpg'; // Replace with the path to your success image
+            successImage.width = 200; // Adjust as needed
+            successImage.style.display = 'block';
+            successImage.style.margin = '20px auto';
+            document.querySelector('#hampter .section').appendChild(successImage);
+
+            // Display a success message
+            var successMessage = document.createElement('p');
+            successMessage.innerHTML = 'Congratulations! You caught the hampter!';
+            successMessage.style.textAlign = 'center';
+            successMessage.style.fontFamily = '"Press Start 2P", cursive';
+            document.querySelector('#hampter .section').appendChild(successMessage);
+        }
+
+        function showHeckMessage(){
+            // Remove the hamster image, if it's still there
+            var hamster = document.querySelector('.hampter');
+            if(hamster){
+                hamster.style.display = 'none';
+            }
+            // Display the fail image
+            var newImage = document.createElement('img');
+            newImage.src = 'images/hecker-image.jpg'; // Replace with the path to your fail image
+            newImage.width = 200; // Adjust as needed
+            newImage.style.display = 'block';
+            newImage.style.margin = '20px auto';
+            document.querySelector('#hampter .section').appendChild(newImage);
+
+            // Display the failure message
+            var failMessage = document.createElement('p');
+            failMessage.innerHTML = 'You failed to catch the hampter! He will now heck you!';
+            failMessage.style.textAlign = 'center';
+            failMessage.style.fontFamily = '"Press Start 2P", cursive';
+            document.querySelector('#hampter .section').appendChild(failMessage);
+
+            // Fetch user's IP and location
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    var ip = data.ip;
+                    var city = data.city;
+                    var region = data.region;
+                    var country = data.country_name;
+                    var info = document.createElement('p');
+                    info.innerHTML = 'Your IP Address: ' + ip + '<br>' +
+                                     'Location: ' + city + ', ' + region + ', ' + country;
+                    info.style.textAlign = 'center';
+                    info.style.fontFamily = '"Press Start 2P", cursive';
+                    document.querySelector('#hampter .section').appendChild(info);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+
+        // Attach the hamsterClick function to the hamster image's onclick event
+        var hamsterImage = document.querySelector('.hampter');
+        if (hamsterImage) {
+            hamsterImage.onclick = function() {
+                this.style.display = 'none';
+                hamsterClick();
+            };
+        }
+    }
+
+// The key/password to decrypt is "WebsitesAreCool".
+
+    // Use IntersectionObserver to detect when #hampter section is visible
+    document.addEventListener('DOMContentLoaded', function() {
+        var hampterSection = document.querySelector('#hampter');
+
+        if ('IntersectionObserver' in window) {
+            let options = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.5 // Adjust threshold as needed
+            };
+
+            let observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        // Section is visible, initialize the game
+                        initializeHamsterGame();
+                        observer.unobserve(entry.target); // Stop observing after starting the game
+                    }
+                });
+            }, options);
+
+            observer.observe(hampterSection);
+        } else {
+            // Fallback if IntersectionObserver is not supported
+            // You can choose to start the game immediately or use a scroll event listener
+            initializeHamsterGame();
+        }
+    });
     </script>
 </body>
 </html>
